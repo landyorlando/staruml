@@ -1,0 +1,18 @@
+{
+  "menu": [
+    {
+      "id": "tools",
+      "submenu": [
+        {
+          "label": "Odoo",
+          "id": "tools.odoo",
+          "submenu": [
+            { "label": "Generate Code...", "id": "tools.odoo.generate", "command": "odoo:generate" },
+            { "type": "separator" },
+            { "label": "Configure...", "id": "tools.odoo.configure", "command": "odoo:configure" }
+          ]
+        }
+      ]
+    }
+  ]
+}
