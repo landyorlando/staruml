@@ -1595,7 +1595,11 @@ function generate (baseModel, basePath, options) {
   var iconName = options.iconName
 
   // -------- write main addon folders
-  app.dialogs.showInfoDialog("This is info message.")
+
+  if (baseModel instanceof type.UMLPackage) {
+      app.dialogs.showInfoDialog("Es un paquete.")
+  }
+
   var odooCodeGenerator = new OdooCodeGenerator(baseModel, basePath)
   fullPath = basePath + '/' + baseModel.name
   fs.mkdirSync(fullPath)
