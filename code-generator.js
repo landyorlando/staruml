@@ -216,7 +216,8 @@ class OdooCodeGenerator {
         // attribute = fields.XXXXX([XXXXXX,] string="titlecase(name)", help="documentation")
         line += ' help="' + elem.documentation + '"'        
         line += ')'      
-      } 
+      }
+      alert("si ")
       codeWriter.writeLine(line)
     }
   }
