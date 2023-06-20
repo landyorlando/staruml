@@ -1457,6 +1457,7 @@ class OdooCodeGenerator {
     } else if (elem instanceof type.UMLClass || elem instanceof type.UMLInterface) {
 
       /// generate py----------------------------
+      app.dialogs.showInfoDialog("Es un clase." + elem.name)
       fullPath = basePath + '/model/' + elem.name + '.py'
       codeWriter = new codegen.CodeWriter(this.getIndentString(options))
       codeWriter.writeLine(options.installPath)
@@ -1595,11 +1596,6 @@ function generate (baseModel, basePath, options) {
   var iconName = options.iconName
 
   // -------- write main addon folders
-
-  if (baseModel instanceof type.UMLPackage) {
-      app.dialogs.showInfoDialog("Es un paquete.")
-  }
-
   var odooCodeGenerator = new OdooCodeGenerator(baseModel, basePath)
   fullPath = basePath + '/' + baseModel.name
   fs.mkdirSync(fullPath)
