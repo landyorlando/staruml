@@ -217,7 +217,8 @@ class OdooCodeGenerator {
         line += ' help="' + elem.documentation + '"'        
         line += ')'      
       }
-      alert("si ")
+
+      app.dialogs.showErrorDialog("This is message mio bla bla bla.")
       codeWriter.writeLine(line)
     }
   }
