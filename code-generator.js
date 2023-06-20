@@ -652,6 +652,8 @@ class OdooCodeGenerator {
     })
 
     //looping associations
+    line = 'si mi linea, esta es mia'
+    codeWriter.writeLine(line)
     for (var i = 0, len = associations.length; i < len; i++) {
       var asso = associations[i]
       if (asso.end1.reference === elem && asso.end2.navigable === true) {
@@ -1457,7 +1459,6 @@ class OdooCodeGenerator {
     } else if (elem instanceof type.UMLClass || elem instanceof type.UMLInterface) {
 
       /// generate py----------------------------
-      app.dialogs.showInfoDialog("Es un clase." + elem.name)
       fullPath = basePath + '/model/' + elem.name + '.py'
       codeWriter = new codegen.CodeWriter(this.getIndentString(options))
       codeWriter.writeLine(options.installPath)
