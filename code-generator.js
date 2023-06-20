@@ -217,8 +217,6 @@ class OdooCodeGenerator {
         line += ' help="' + elem.documentation + '"'        
         line += ')'      
       }
-
-      app.dialogs.showErrorDialog("This is message mio bla bla bla.")
       codeWriter.writeLine(line)
     }
   }
@@ -1597,6 +1595,7 @@ function generate (baseModel, basePath, options) {
   var iconName = options.iconName
 
   // -------- write main addon folders
+  app.dialogs.showInfoDialog("This is info message.")
   var odooCodeGenerator = new OdooCodeGenerator(baseModel, basePath)
   fullPath = basePath + '/' + baseModel.name
   fs.mkdirSync(fullPath)
