@@ -159,19 +159,19 @@ class OdooCodeGenerator {
         // attribut = fields.Many2one(comodel_name="addon.refference",
         if (elem.multiplicity == '0..*')
         {
-          line += ' = fields.Many2one(comodel_name="'+ this.getModelName(inverse_field.reference, options, ".") + '", '
+          line += ' = fields.Many2one("'+ this.getModelName(inverse_field.reference, options, ".") + '", '
           // line += ' = fields.Many2one(comodel_name="'+addonName + '.' + inverse_field.reference.name + '", '
         }
         // attribut = fields.One2many(comodel_name="addon.refference", inverse_name="" 
         else if(elem.multiplicity == '1')
         {
-          line += ' = fields.One2many(comodel_name="'+ this.getModelName(inverse_field.reference, options, ".") + '", '
-          line += ' inverse_name="' + inverse_field.name + '", '
+          line += ' = fields.One2many("'+ this.getModelName(inverse_field.reference, options, ".") + '", '
+          line += '"' + inverse_field.name + '", '
         }
         // attribut = fields.Many2many(comodel_name="addon.refference", 
         else if(elem.multiplicity == '*')
         {
-          line += ' = fields.Many2many(comodel_name="'+ this.getModelName(inverse_field.reference, options, ".") + '", '        
+          line += ' = fields.Many2many("'+ this.getModelName(inverse_field.reference, options, ".") + '", '
         }
 
       } 
