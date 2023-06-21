@@ -654,7 +654,7 @@ class OdooCodeGenerator {
     //looping associations
     for (var i = 0, len = associations.length; i < len; i++) {
       var asso = associations[i]
-      line = 'linea de referncia de relacion: ' + asso.end2.navigable
+//      line = 'linea de referncia de relacion: ' + asso.end2.navigable
       codeWriter.writeLine(line)
       if (asso.end1.reference === elem && asso.end2.navigable === 'navigable') {
         // end1 = class ini => Many2one
