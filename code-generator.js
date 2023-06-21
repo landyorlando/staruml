@@ -249,11 +249,11 @@ class OdooCodeGenerator {
     })
     for (var i = 0, len = associations.length; i < len; i++) {
       var asso = associations[i]
-      if (asso.end1.reference === elem && asso.end2.navigable === true) {
+      if (asso.end1.reference === elem && asso.end2.navigable === 'navigable') {
         self.writeVariable(codeWriter, asso.end2, options)
         hasBody = true
       }
-      if (asso.end2.reference === elem && asso.end1.navigable === true) {
+      if (asso.end2.reference === elem && asso.end1.navigable === 'navigable') {
         self.writeVariable(codeWriter, asso.end1, options)
         hasBody = true
       }
@@ -656,11 +656,11 @@ class OdooCodeGenerator {
       var asso = associations[i]
       line = 'linea de referncia de relacion: ' + asso.end2.navigable
       codeWriter.writeLine(line)
-      if (asso.end1.reference === elem && asso.end2.navigable === true) {
+      if (asso.end1.reference === elem && asso.end2.navigable === 'navigable') {
         // end1 = class ini => Many2one
         self.writeVariable(codeWriter, asso.end1 , options, true, asso.end2, stateExist)
       }
-      if (asso.end2.reference === elem && asso.end1.navigable === true) {
+      if (asso.end2.reference === elem && asso.end1.navigable === 'navigable') {
         // end2 = class ini => One2many
         self.writeVariable(codeWriter, asso.end2, options, true, asso.end1, stateExist)
       }
@@ -772,7 +772,7 @@ class OdooCodeGenerator {
     //looping associations
     for (var i = 0, len = associations.length; i < len; i++) {
       var asso = associations[i]
-      if (asso.end1.reference === elem && asso.end2.navigable === true) {
+      if (asso.end1.reference === elem && asso.end2.navigable === 'navigable') {
         // end1 = class ini => Many2one
         if(asso.end1.name !== "" && asso.end1.name !== undefined){
           if (asso.end1.multiplicity == '0..*' || asso.end1.multiplicity == '1..*'){
@@ -784,7 +784,7 @@ class OdooCodeGenerator {
 
         }
       }
-      if (asso.end2.reference === elem && asso.end1.navigable === true) {
+      if (asso.end2.reference === elem && asso.end1.navigable === 'navigable') {
         // end2 = class ini => One2many
         if(asso.end2.name !== "" && asso.end2.name !== undefined){
           // console.log(asso.end2)
@@ -1230,13 +1230,13 @@ class OdooCodeGenerator {
     //looping associations
     for (var i = 0, len = associations.length; i < len; i++) {
       var asso = associations[i]
-      if (asso.end1.reference === elem && asso.end2.navigable === true) {
+      if (asso.end1.reference === elem && asso.end2.navigable === 'navigable') {
         // end1 = class ini => Many2one
         if(asso.end1.name !== "" && asso.end1.name !== undefined){
           m2o_fields.push(asso.end1)          
         }
       }
-      if (asso.end2.reference === elem && asso.end1.navigable === true) {
+      if (asso.end2.reference === elem && asso.end1.navigable === 'navigable') {
         // end2 = class ini => One2many
         if(asso.end2.name !== "" && asso.end2.name !== undefined){
           o2m_fields.push(asso.end2)  
@@ -1320,7 +1320,7 @@ class OdooCodeGenerator {
       //looping associations
       for (var i = 0, len = associations.length; i < len; i++) {
         var asso = associations[i]
-        if (asso.end1.reference === end1 && asso.end2.navigable === true) {
+        if (asso.end1.reference === end1 && asso.end2.navigable === 'navigable') {
           // end1 = class ini => Many2one
           if(asso.end1.name !== "" && asso.end1.name !== undefined){
             comodel_m2o_fields.push(asso.end1)          
