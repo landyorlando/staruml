@@ -155,7 +155,7 @@ class OdooCodeGenerator {
       // relational fields
       else if (elem.multiplicity && ['0..*', '1..*', '*', '1'].includes(elem.multiplicity.trim())) 
       {
-//        line = elem.name
+        line = elem.name
         // attribut = fields.Many2one(comodel_name="addon.refference",
         if (elem.multiplicity == '0..*')
         {
@@ -623,8 +623,8 @@ class OdooCodeGenerator {
       line = '_name = "' + objectName + '"'   
       codeWriter.writeLine(line)
 
-      line = '_description = "' + objectName + '"'    
-      codeWriter.writeLine(line)
+//      line = '_description = "' + objectName + '"'
+//      codeWriter.writeLine(line)
 
 
       //write fields 
