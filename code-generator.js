@@ -623,8 +623,8 @@ class OdooCodeGenerator {
       line = '_name = "' + objectName + '"'   
       codeWriter.writeLine(line)
 
-//      line = '_description = "' + objectName + '"'
-//      codeWriter.writeLine(line)
+      line = '_description = "' + objectName + '"'
+      codeWriter.writeLine(line)
 
 
       //write fields 
@@ -655,7 +655,7 @@ class OdooCodeGenerator {
     for (var i = 0, len = associations.length; i < len; i++) {
       var asso = associations[i]
 //      line = 'linea de referncia de relacion: ' + asso.end2.navigable
-      codeWriter.writeLine(line)
+//      codeWriter.writeLine(line)
       if (asso.end1.reference === elem && asso.end2.navigable === 'navigable') {
         // end1 = class ini => Many2one
         self.writeVariable(codeWriter, asso.end1 , options, true, asso.end2, stateExist)
